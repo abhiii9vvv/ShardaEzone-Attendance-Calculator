@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "Ezone Attendance Calculator",
+  "version": "1.1.0",
+  "description": "Attendance calculator by Abhinav Tiwary. Adds Can Skip / Need to Attend columns with 75% or 85% targets.",
+  "permissions": ["scripting"],
+  "host_permissions": ["https://student.sharda.ac.in/*"],
+  "content_scripts": [
+    {
+      "matches": ["https://student.sharda.ac.in/admin/courses*"],
+      "js": ["content.js"],
+      "css": ["styles.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_title": "Ezone Course List UI",
+    "default_icon": {
+      "128": "assets/logo.svg"
+    }
+  },
+  "icons": {
+    "128": "assets/logo.svg"
+  }
+}
