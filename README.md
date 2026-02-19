@@ -1,34 +1,31 @@
 # ShardaEzone Attendance Calculator
 
-A Chrome/Edge browser extension for Sharda University students that enhances the Ezone attendance portal. Automatically calculates and displays "Can Skip" and "Need to Attend" columns based on your attendance data, helping you track whether you can afford to miss classes or need to catch up to maintain 75% or 85% attendance requirements.
+A lightweight Chrome/Edge browser extension engineered to solve a real-world problem faced by Sharda University students: the lack of real-time attendance analytics on the Ezone portal. The extension injects directly into the portal's DOM, computes personalized skip/attend recommendations, and displays them inline without any external API calls or data collection.
 
-## Features
+Built with vanilla JavaScript and the Chrome Extensions Manifest V3 API, it demonstrates practical DOM engineering, content script architecture, and privacy-first design. The tool runs entirely client-side, ensuring zero data exposure.
 
-- 📊 **Real-time Calculations**: Automatically calculates how many classes you can skip or need to attend
-- 🎯 **Multiple Targets**: Switch between 75% and 85% attendance targets
-- 🎨 **Clean UI**: Enhanced interface that integrates seamlessly with the Ezone portal
-- 🔒 **Privacy Focused**: No API calls, no data collection, works entirely in your browser
+## Tech Stack
 
-## Install (Chrome/Edge)
+- **Language:** JavaScript (Vanilla ES6+)
+- **Platform:** Chrome Extensions API (Manifest V3)
+- **Injection:** DOM Content Scripts
+- **Styling:** CSS3
 
-1. Open the extensions page: `chrome://extensions` or `edge://extensions`
-2. Enable **Developer mode**
-3. Click **Load unpacked** and select this folder
+## Key Features
+
+- Automated real-time calculation of skippable and required classes
+- Dual target support: 75% and 85% attendance thresholds
+- Seamless DOM injection into existing Ezone portal UI
+- Privacy-focused: zero API calls, no data collection, fully local
+- Works on Chrome and Microsoft Edge browsers
+
+## Install
+
+1. Open `chrome://extensions` or `edge://extensions`
+2. Enable Developer mode
+3. Click Load unpacked and select this folder
 4. Navigate to https://student.sharda.ac.in/admin/courses
 
 ## How It Works
 
-- The extension runs only on the `/admin/courses` page
-- It reads your attendance data directly from the DOM
-- Calculates the number of classes you can skip while maintaining your target percentage
-- Shows how many classes you need to attend if you're below the target
-
-## Notes
-
-- No credentials or personal data are stored or transmitted
-- All calculations happen locally in your browser
-- Does not modify your actual attendance records
-
----
-
-Made with ❤️ by Abhinav Tiwary
+The content script activates on the `/admin/courses` page, reads attendance data directly from the DOM, and injects computed columns showing exactly how many classes can be skipped or must be attended to maintain the selected attendance target.
